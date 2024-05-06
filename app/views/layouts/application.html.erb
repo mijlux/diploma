@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <title>Diploma</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+
+<body>
+    <div class="navbar-title">
+      <p><%=link_to 'Travel', root_path %></p>
+    </div>
+    <div class = "navbar">
+    <p><%= link_to 'О моем проекте', url_for(controller: 'pages', action: 'show', page: 'about'), class: 'navbar-white' %></p>
+    <p><%= link_to 'Фильтр', url_for(controller: 'travels', action: 'filter'), class: 'navbar-white' %></p>
+    <p><%= link_to 'Контакты', url_for(controller: 'pages', action: 'show', page: 'contact'), class:'navbar-white' %></p>
+    <p><%= link_to 'Галерея', url_for(controller: 'pages', action: 'show', page: 'gallery'), class:'navbar-white' %></p>
+    <div class = title-sm>
+      <% if current_user.present? %>
+<!--
+        <%#= content_tag 'span',"@#{current_user.login}", class: 'mr-sm navbar-white' %>
+-->
+        <%= link_to "@#{current_user.login}",current_user, class: 'mr-sm navbar-white' %>
+        <%= button_to 'Выйти', session_path, method: :delete, class: 'button button-main' %>
+
+      <% else %>
+        <%= link_to 'Вход', new_session_path, class: 'button button-main' %>
+        <%= link_to 'Регистрация', new_user_path, class: 'button button-main' %>
+      <% end %>
+    </div>
+    </div>
+  <%if flash[:notice].present? %>
+    <p class = "mb mt message message-notice"><%=flash[:notice] %></p>
+
+  <%elsif flash[:alert].present? %>
+    <p class = "mb mt message message-alert"><%=flash[:alert] %></p>
+  <% end %>
+
+  <%= yield %>
+</body>
+</html>

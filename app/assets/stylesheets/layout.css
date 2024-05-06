@@ -1,0 +1,40 @@
+/*body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; !* Устанавливаем минимальную высоту равной высоте окна просмотра *!
+    margin: 0; !* Убираем стандартные отступы *!
+}*/
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1111px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    border-radius: 10px;
+    background: lightblue;
+    /*background: #8739F9;*/
+    padding: 20px;
+    width : 100%;
+    max-width: 300px;
+}
+.container-desc{
+    border-radius: 10px;
+    background: lightblue;
+    padding: 20px;
+    width : 100%;
+    max-width: 800px;
+    height: 100%;
+    max-height: 400px;
+}
+.container a{
+    text-decoration: none;
+    color: darkslateblue;
+}

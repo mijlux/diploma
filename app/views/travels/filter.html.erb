@@ -1,0 +1,39 @@
+<%= form_with(url: travels_random_path, method: :get, local: true, html: { class: "travel-form" }) do |form| %>
+  <div class="travel-section">
+    <h3 class="section-title">Климат</h3>
+    <div class="checkbox-group">
+      <%= form.label :climate, "Жарко", class: 'checkbox-label mr-sm' %>
+      <%= form.check_box :climate, { multiple: true }, "hot", class: 'checkbox-input' %>
+      <%= form.label :climate, "Холодно", class: 'checkbox-label' %>
+      <%= form.check_box :climate, { multiple: true }, "cold", class: 'checkbox-input' %>
+      <%= form.label :climate, "Не важно", class: 'checkbox-label' %>
+      <%= form.check_box :climate, { multiple: true }, "not_important", class: 'checkbox-input' %>
+    </div>
+  </div>
+
+  <div class="travel-section">
+    <h3 class="section-title">Расположение</h3>
+    <div class="checkbox-group">
+      <%= form.label :location, "У моря", class: 'checkbox-label mb-sm' %>
+      <%= form.check_box :location, { multiple: true }, "by_sea", class: 'checkbox-input' %>
+      <%= form.label :location, "У гор", class: 'checkbox-label mb-sm' %>
+      <%= form.check_box :location, { multiple: true }, "by_mountain", class: 'checkbox-input' %>
+      <%= form.label :location, "Не важно", class: 'checkbox-label mb-sm' %>
+      <%= form.check_box :location, { multiple: true }, "not_important", class: 'checkbox-input' %>
+    </div>
+  </div>
+
+  <div class="travel-section">
+    <h3 class="section-title">Популярность</h3>
+    <div class="checkbox-group">
+      <%= form.label :popularity, "Популярное", class: 'checkbox-label' %>
+      <%= form.check_box :popularity, { multiple: true }, "popular", class: 'checkbox-input' %>
+      <%= form.label :popularity, "Непопулярное", class: 'checkbox-label' %>
+      <%= form.check_box :popularity, { multiple: true }, "not_popular", class: 'checkbox-input' %>
+      <%= form.label :popularity, "Не важно", class: 'checkbox-label' %>
+      <%= form.check_box :popularity, { multiple: true }, "not_important", class: 'checkbox-input' %>
+    </div>
+  </div>
+
+  <%= form.submit "Показать", class: 'submit-button' %>
+<% end %>

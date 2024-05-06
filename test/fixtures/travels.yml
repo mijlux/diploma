@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country: MyString
+  string: MyString
+  city: MyString
+  string: MyString
+  climate: MyString
+  iswater: 1
+  ismount: 1
+  description: MyText
+  city_image: MyString
+
+two:
+  country: MyString
+  string: MyString
+  city: MyString
+  string: MyString
+  climate: MyString
+  iswater: 1
+  ismount: 1
+  description: MyText
+  city_image: MyString

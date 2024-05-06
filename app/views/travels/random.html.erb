@@ -1,0 +1,19 @@
+<div class = "container"> РАНДОМ
+  <h2 class = "mb text-bold text-center">Travel</h2>
+  <p class = "text-center">Country: <%= @travel.country %></p>
+  <p class = "text-center">City: <%= @travel.city%></p>
+  <p class = "text-center">Climate: <%=@travel.climate %></p>
+  <p class = "text-center">IsWater: <%= @travel.iswater %></p>
+  <p class = "text-center">IsMount: <%= @travel.ismount %></p>
+  <p class = "text-center">IsPopular: <%= @travel.ispopular %></p>
+  <p class = "text-center">Desc: <%= @travel.description %></p>
+  <p class = "text-center">Photo: <%= @travel.city_image %></p>
+  <p class = "text-center"><%= image_tag @travel.city_image.url, class: 'img-container' if @travel.city_image? %></p>
+</div>
+<div class="mt-sm mb-sm">
+  <%= button_to 'Изменить данные профиля', edit_travel_path(@travel), method: :get, class: 'button button-main' %>
+</div>
+<div>
+  <%=button_to 'Delete', @travel, method: :delete, class: 'button button-main' %>
+</div>
+

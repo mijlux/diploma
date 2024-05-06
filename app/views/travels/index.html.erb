@@ -1,0 +1,9 @@
+<h1>Список пользователей</h1>
+  <% @travel.each do |travel| %>
+  <p class = "mb-sm"><%= link_to "Travel#{travel.id}", travel_path(travel.id) %></p>
+  <% end %>
+<div>
+  <%=button_to 'Add', '/travels/new', method: :get, class: 'button button-main' %>
+</div>
+
+

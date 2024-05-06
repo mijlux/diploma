@@ -1,0 +1,40 @@
+.button {
+    border: 0;
+    border-radius: 7px; /* Увеличиваем радиус скругления для более мягкого вида */
+    color: white;
+    display: inline-block;
+    font-size: 16px; /* Увеличиваем размер шрифта для большей читаемости */
+    padding: 10px 20px; /* Увеличиваем внутренний отступ для большей области нажатия */
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Добавляем плавное изменение цвета фона при наведении */
+}
+
+.button:hover {
+    background-color: #003333; /* Изменяем цвет фона при наведении на темнее */
+}
+
+.button-main {
+    background-color: #8739F9;
+    cursor: pointer; /* Изменяем курсор на указатель при наведении, чтобы показать, что элемент кликабельный */
+}
+
+.button-color {
+    background-color: black;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #8739F9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}

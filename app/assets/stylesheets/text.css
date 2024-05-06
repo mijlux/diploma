@@ -1,0 +1,34 @@
+body {
+    font-family: "Trebuchet MS", sans-serif;
+}
+.title-lg {
+    font-size: 175%;
+}
+.title-md, .title{
+    font-size: 150%;
+}
+.title-sm {
+    font-size: 125%;
+}
+.title-sm {
+    font-size: 100%;
+}
+.text-sm {
+    font-size: 80%;
+}
+.text-smm {
+    font-size: 60%;
+}
+.text-bold {
+    font-weight: bold;
+}
+.text-red{
+    color: red;
+}
+.text-center{
+    display: flex;
+    justify-content: center;
+}
+.link a{
+    text-decoration: none;
+}
