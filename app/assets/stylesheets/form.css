@@ -3,7 +3,7 @@
     padding: 7px 10px;
 }
 .form-text-area:focus, .form-text-field:focus{
-    background-color: yellow;
+    background-color: #E5CCFF;
     outline-width: 0;
 }
 .form-text-area {
@@ -15,7 +15,7 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #CCE5FF;
+    background-color: #E5CCFF;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

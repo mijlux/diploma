@@ -8,5 +8,7 @@
  *= require form
  *= require message
  *= require navbar
- *= require imgae
+ *= require image
+ *= require footer
+ *= require font
  */

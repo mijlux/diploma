@@ -1,8 +1,9 @@
-<div class="wrapper mt-lg">
-  <div class = "container mt-lg mb-lg mr-lg">
-    <p class = "text-center title"><%= @travel.country %></p>
-    <p class = "text-center title-sm"><%= @travel.city%></p>
-    <p class = "text-center">Климат:
+<div class="wrapper-y">
+  <div class="wrapper mt-lg">
+  <div class = "container mt-lg mb-lg mr">
+    <p class = "text-center title mb-sm mt-lg"><%= @travel.country %></p>
+    <p class = "text-center title-sm mb"><%= @travel.city%></p>
+    <p class = "text-center title-sm">Климат:
       <% if @travel.climate == 'Жарко' %>
           <%= 'Жарко' %>
         <% elsif @travel.climate == 'Тепло' %>
@@ -24,16 +25,17 @@
       <%end %></p>
     <p class = "text-center title-sm">
       <% if @travel.ispopular? %>
-        <%= 'Популярное направление ✅' %>
+        <%= 'Популярно ✅' %>
       <% else %>
-        <%='Популярное направление ❌' %>
+        <%='Популярно ❌' %>
       <%end %></p>
   </div>
 
   <div class = "container-desc mt-lg ml-lg mb-lg">
-  <p class = "text-center title-smm"><%= @travel.description %></p>
+  <p class = "text-center title-sm"><%= @travel.description %></p>
   </div>
 </div>
+
 
 <% if current_user.present? %>
   <%= form_with(url: add_to_favorites_travel_path(@travel), method: :post) do |form| %>
@@ -41,11 +43,37 @@
   <% end %>
 <% end %>
 
-  <p class = "text-center"><%= image_tag @travel.city_image.url, class: 'img-container' if @travel.city_image? %></p>
+<p class = "text-center"><%= image_tag @travel.city_image.url, class: 'mb mt img' if @travel.city_image? %></p>
 
+<div class = "mt-lg">
+<% if @reviews.any? %>
+      <ul>
+        <% @reviews.each do |review| %>
+          <div class = "container-review mb">
+          <li>
+            <strong>Пользователь:</strong> <%= review.user.name %><br>
+            <strong>Оценка:</strong> <%= review.rating %><br>
+            <strong>Комментарий:</strong> <%= review.comment %><br>
+          </li>
+          </div>
+        <% end %>
+      </ul>
+<% end %>
 
+  <div class = "container-review">
+    <p class="text-center text-bold mb">Были здесь? Поделитесь своими впечатлениями!</p>
+    <%= form_with(model: [@travel, @travel.reviews.build], url: travel_reviews_path(@travel)) do |form| %>
+      <%= form.label :rating, 'Оценка: ' %>
+      <%= form.number_field :rating %><br>
 
+      <%= form.label :comment, 'Комментарий: ' %>
+      <%= form.text_area :comment, class: 'form-text-area'%>
 
+      <%= form.submit 'Добавить отзыв', class: 'submit-button' %>
+    <% end %>
+  </div>
+  </div>
+</div>
 <div class="mt-sm mb-sm">
   <%= button_to 'Изменить данные профиля', edit_travel_path(@travel), method: :get, class: 'button button-main' %>
 </div>

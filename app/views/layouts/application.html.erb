@@ -15,10 +15,8 @@
       <p><%=link_to 'Travel', root_path %></p>
     </div>
     <div class = "navbar">
-    <p><%= link_to 'О моем проекте', url_for(controller: 'pages', action: 'show', page: 'about'), class: 'navbar-white' %></p>
-    <p><%= link_to 'Фильтр', url_for(controller: 'travels', action: 'filter'), class: 'navbar-white' %></p>
-    <p><%= link_to 'Контакты', url_for(controller: 'pages', action: 'show', page: 'contact'), class:'navbar-white' %></p>
-    <p><%= link_to 'Галерея', url_for(controller: 'pages', action: 'show', page: 'gallery'), class:'navbar-white' %></p>
+      <p><%= link_to 'Все направления', url_for(controller: 'travels', action: 'index'), class: 'navbar-white' %></p>
+      <p><%= link_to 'Выбрать подходящее', url_for(controller: 'travels', action: 'filter'), class: 'navbar-white' %></p>
     <div class = title-sm>
       <% if current_user.present? %>
 <!--
@@ -41,5 +39,14 @@
   <% end %>
 
   <%= yield %>
+
+  <div class="mt-xxl footer-title">
+    <p><%=link_to 'Travel', root_path %></p>
+  </div>
+
+  <div class = "footer">
+    <p class = "text-center">&copy; Mikhail Konovalov 2024 </p>
+  </div>
+
 </body>
 </html>

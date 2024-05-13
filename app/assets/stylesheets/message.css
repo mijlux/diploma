@@ -3,11 +3,11 @@
     padding: 10px 15px;
 }
 .message-notice{
-    background-color: #FFFF65;
+    background-color: #E5CCFF;
     color: black;
     border-color: green;
 }
 .message-alert {
-    background-color: lightpink;
+    background-color: #E5CCFF;
     border-color: red;
 }

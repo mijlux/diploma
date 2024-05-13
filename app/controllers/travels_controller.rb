@@ -16,6 +16,7 @@ class TravelsController < ApplicationController
 
   def show
     @travel = Travel.find(params[:id])
+    @reviews = @travel.reviews
   end
 
   def destroy
@@ -58,7 +59,7 @@ class TravelsController < ApplicationController
   def add_to_favorites
     @travel = Travel.find(params[:id])
     current_user.travels << @travel
-    redirect_to @travel, notice: 'Travel was added to favorites.'
+    redirect_to @travel, notice: 'Успешно добавлено в избранное.'
   end
 
   private
@@ -67,8 +68,10 @@ class TravelsController < ApplicationController
     # Пример применения фильтра климата
     if climate_filter.include?("hot")
       travels = travels.where(climate: "Жарко")
-    elsif climate_filter.include?("cold")
+    elsif climate_filter.include?("warm")
       travels = travels.where(climate: "Тепло")
+    elsif climate_filter.include?("cold")
+      travels = travels.where(climate: "Холодно")
     end
     travels
   end

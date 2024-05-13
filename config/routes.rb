@@ -13,9 +13,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :travels do
+    resources :reviews
+  end
+
   resources :travels
-
-
 
   resource :session, only: %i[new create destroy]
 

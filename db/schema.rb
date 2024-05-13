@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_04_162648) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_12_123607) do
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -216,6 +216,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_04_162648) do
     t.index ["name"], name: "motor_tags_name_unique_index", unique: true
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "comment"
+    t.integer "user_id", null: false
+    t.integer "travel_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["travel_id"], name: "index_reviews_on_travel_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "travels", force: :cascade do |t|
     t.string "country"
     t.string "city"
@@ -252,6 +263,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_04_162648) do
   add_foreign_key "motor_note_tag_tags", "motor_note_tags", column: "tag_id"
   add_foreign_key "motor_note_tag_tags", "motor_notes", column: "note_id"
   add_foreign_key "motor_taggable_tags", "motor_tags", column: "tag_id"
+  add_foreign_key "reviews", "travels"
+  add_foreign_key "reviews", "users"
   add_foreign_key "user_travels", "travels"
   add_foreign_key "user_travels", "users"
 end

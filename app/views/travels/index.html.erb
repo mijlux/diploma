@@ -1,9 +1,51 @@
-<h1>Список пользователей</h1>
+<div class="wrapper-y">
   <% @travel.each do |travel| %>
-  <p class = "mb-sm"><%= link_to "Travel#{travel.id}", travel_path(travel.id) %></p>
-  <% end %>
-<div>
-  <%=button_to 'Add', '/travels/new', method: :get, class: 'button button-main' %>
-</div>
+  <p class = "mt-lg mb-sm link text-center title-lg link-black"><%= link_to "#{travel.city}", travel_path(travel.id) %></p>
+  <div class="wrapper mt-lg mb-lg">
+    <div class = "container mt-lg mb-lg mr-lg">
+      <p class = "text-center title mt-lg mb-sm"><%= travel.country %></p>
+      <p class = "text-center title-sm mb"><%= travel.city%></p>
+      <p class = "text-center title-sm">Климат:
+        <% if travel.climate == 'Жарко' %>
+          <%= 'Жарко' %>
+        <% elsif travel.climate == 'Тепло' %>
+          <%= 'Тепло' %>
+        <% elsif travel.climate == 'Холодно' %>
+          <%= 'Холодно' %>
+        <% end %></p>
+      <p class = "text-center title-sm">
+        <% if travel.iswater? %>
+          <%= 'Около моря ✅' %>
+        <% else %>
+          <%='Около моря ❌' %>
+        <%end %></p>
+      <p class = "text-center title-sm">
+        <% if travel.ismount? %>
+          <%= 'Около гор ✅' %>
+        <% else %>
+          <%='Около гор ❌' %>
+        <%end %></p>
+      <p class = "text-center title-sm">
+        <% if travel.ispopular? %>
+          <%= 'Популярно ✅' %>
+        <% else %>
+          <%='Популярно ❌' %>
+        <%end %></p>
+    </div>
 
+    <div class = "container-desc mt-lg ml-lg mb-lg">
+      <p class = "text-center title-sm"><%= travel.description %></p>
+    </div>
+  </div>
+    <p class = "text-center"><%= image_tag travel.city_image.url, class: 'img mb' if travel.city_image? %></p>
+
+  <% if current_user.present? %>
+    <%= form_with(url: add_to_favorites_travel_path(travel), method: :post) do |form| %>
+      <%= form.submit "Добавить в избранное", class: 'submit-button' %>
+    <% end %>
+  <% end %>
+
+
+  <% end %>
+</div>
 

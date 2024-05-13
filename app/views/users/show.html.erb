@@ -1,21 +1,20 @@
-<div class = "wrapper">
+<div class = "mt-xxl text-center">
   <div class = "container mt-lg">
-    <h2 class = "mb text-bold text-center title-lg">Личный кабинет</h2>
-    <p class = "text-center">Имя: <%= @user.name %></p>
-    <p class = "text-center">Email: <%= @user.email%></p>
-    <p class = "text-center">Логин: <%= @user.login %></p>
+    <h2 class = "mb text-bold text-center title-lg helvetica">Личный кабинет</h2>
+    <p class = "text-center title">Имя: <%= @user.name %></p>
+    <p class = "text-center title">Email: <%= @user.email%></p>
+    <p class = "text-center title">Логин: <%= @user.login %></p>
     <div class="mt-sm mb-sm">
       <%= button_to 'Изменить данные профиля', edit_user_path(@user), method: :get, class: 'submit-button' %>
     </div>
     <p class = "text-center text-bold title mt-lg mb-sm"> Избранное: </p>
     <div>
       <% current_user.travels.each do |travel| %>
-        <p><%= link_to travel.city, travel_path(travel), class:'text-center mb-sm' %></p>
+        <p class="verdana title-sm"><%= link_to travel.city, travel_path(travel), class:'text-center mb-sm' %></p>
       <% end %>
     </div>
   </div>
 </div>
-
 <div>
-  <%=button_to 'Delete', user_path(@user), method: :delete, class: 'button button-main' %>
+  <%=button_to 'Удалить профиль', user_path(@user), method: :delete, class: 'mt-xxl button button-main' %>
 </div>

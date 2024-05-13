@@ -4,6 +4,8 @@
     <div class="checkbox-group">
       <%= form.label :climate, "Жарко", class: 'checkbox-label mr-sm' %>
       <%= form.check_box :climate, { multiple: true }, "hot", class: 'checkbox-input' %>
+      <%= form.label :climate, "Тепло", class: 'checkbox-label mr-sm' %>
+      <%= form.check_box :climate, { multiple: true }, "warm", class: 'checkbox-input' %>
       <%= form.label :climate, "Холодно", class: 'checkbox-label' %>
       <%= form.check_box :climate, { multiple: true }, "cold", class: 'checkbox-input' %>
       <%= form.label :climate, "Не важно", class: 'checkbox-label' %>

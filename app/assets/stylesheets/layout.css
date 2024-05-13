@@ -1,40 +1,68 @@
-/*body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; !* Устанавливаем минимальную высоту равной высоте окна просмотра *!
-    margin: 0; !* Убираем стандартные отступы *!
-}*/
+body {
+    background-image: url(images/hero-bg.jpg);
+    background-attachment: fixed;
+}
+
 .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1111px;
+    max-width: 1211px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #F5F5F5;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper-y {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1211px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .container {
     border-radius: 10px;
-    background: lightblue;
+    background: #E5CCFF;
     /*background: #8739F9;*/
     padding: 20px;
-    width : 100%;
-    max-width: 300px;
+    width : 500px;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+
 }
 .container-desc{
+    font-size: 1em;
     border-radius: 10px;
-    background: lightblue;
+    background: #E5CCFF;
     padding: 20px;
-    width : 100%;
-    max-width: 800px;
-    height: 100%;
-    max-height: 400px;
+    width : auto;
+    max-width: 870px;
+    height: auto;
+    max-height: 100%;
 }
 .container a{
     text-decoration: none;
     color: darkslateblue;
+}
+
+.container-review {
+    border-radius: 10px;
+    background: #E5CCFF;
+    padding: 20px;
+    width : 100%;
+    max-width: 600px;
+    height: 100%;
+    max-height: 400px;
+}
+.flex{
+    display:flex;
+    justify-content: left;
 }

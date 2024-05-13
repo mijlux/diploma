@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_many :user_travels
   has_many :travels, through: :user_travels
+  has_many :reviews
 
   validates :email, presence: true, uniqueness: true
   validates :login, presence: true, uniqueness: true

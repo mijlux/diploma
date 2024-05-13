@@ -4,13 +4,16 @@ body {
 .title-lg {
     font-size: 175%;
 }
+.title-xxl {
+    font-size: 300%;
+}
 .title-md, .title{
     font-size: 150%;
 }
 .title-sm {
     font-size: 125%;
 }
-.title-sm {
+.title-smm {
     font-size: 100%;
 }
 .text-sm {
@@ -31,4 +34,10 @@ body {
 }
 .link a{
     text-decoration: none;
+}
+.link-black a {
+    color: black;
+}
+.text-white{
+    color:whitesmoke;
 }

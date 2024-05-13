@@ -1,20 +1,22 @@
-<div class = "wrapper">
+<div class = "text-center mt-xxl">
   <div class = "container mt-lg">
-    <h2 class = "title">Авторизация</h2>
+    <h2 class = "title text-center">Авторизация</h2>
 
-    <p class = "mt text">Введите логин и пароль для входа на сайт</p>
+    <p class = "mt text-center text">Введите логин и пароль для входа на сайт</p>
 
-    <div class = "mt">
+    <div class = "mt-xxl">
       <%=form_with scope: :session, url: session_path, data: {turbo:false} do |form|%>
 
-        <p><%=form.label :login %></p>
-        <p><%=form.text_field :login, class: 'form-text-field' %></p>
+        <p class="text-center"><%=form.label :login %></p>
+        <p class="text-center"><%=form.text_field :login, class: 'form-text-field' %></p>
 
-        <p class = "mt"><%=form.label :password %></p>
-        <p><%=form.password_field :password, class: 'form-text-field' %></p>
+        <p class = "text-center mt-lg"><%=form.label :password %></p>
+        <p class="text-center"><%=form.password_field :password, class: 'form-text-field' %></p>
 
         <p class = "mt-lg"><%=form.submit 'Войти', class: 'submit-button' %></p>
+
       <%end%>
     </div>
   </div>
+  <div class="mt-xxl mb-xxl"></div>
 </div>

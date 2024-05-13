@@ -1,0 +1,36 @@
+
+/* Общие стили для навигационной панели */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff; /* Белый цвет текста */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень под навигацией */
+}
+
+/* Стили для ссылок внутри навигационной панели */
+.footer a {
+    color: #fff;
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    margin-left: 1rem; /* Отступ слева от ссылок */
+}
+
+/* Активная ссылка */
+.footer a.active {
+    color: #ff6347; /* Оранжевый цвет активной ссылки */
+}
+
+.footer-title {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(51, 51, 51, 0.8);
+
+}
+.footer-title a{
+    color: #fff; /* Белый цвет текста */
+    font-family: "Palatino Linotype", sans-serif;
+    text-decoration: none;
+    font-size: 200%;
+}
