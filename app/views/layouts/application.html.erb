@@ -11,25 +11,22 @@
 </head>
 
 <body>
-    <div class="navbar-title">
-      <p><%=link_to 'Travel', root_path %></p>
-    </div>
-    <div class = "navbar">
-      <p><%= link_to 'Все направления', url_for(controller: 'travels', action: 'index'), class: 'navbar-white' %></p>
-      <p><%= link_to 'Выбрать подходящее', url_for(controller: 'travels', action: 'filter'), class: 'navbar-white' %></p>
-    <div class = title-sm>
-      <% if current_user.present? %>
-<!--
-        <%#= content_tag 'span',"@#{current_user.login}", class: 'mr-sm navbar-white' %>
--->
-        <%= link_to "@#{current_user.login}",current_user, class: 'mr-sm navbar-white' %>
-        <%= button_to 'Выйти', session_path, method: :delete, class: 'button button-main' %>
+    <div class = "navbar-main">
+      <div class="navbar-title">
+        <p><%=link_to 'Travel', root_path %></p>
+      </div>
+      <div class = "navbar">
+      <p><%= link_to 'Все направления', url_for(controller: 'travels', action: 'index'), class: 'title-smm mr navbar-white' %></p>
+      <p><%= link_to 'Выбрать подходящее', url_for(controller: 'travels', action: 'filter'), class: 'title-smm mr-lg navbar-white' %></p>
 
+      <% if current_user.present? %>
+        <%= link_to "@#{current_user.login}",current_user, class: 'ml-lg mr-sm title-sm navbar-white' %>
+        <%= button_to 'Выйти', session_path, method: :delete, class: 'button button-main' %>
       <% else %>
         <%= link_to 'Вход', new_session_path, class: 'button button-main' %>
         <%= link_to 'Регистрация', new_user_path, class: 'button button-main' %>
       <% end %>
-    </div>
+      </div>
     </div>
   <%if flash[:notice].present? %>
     <p class = "mb mt message message-notice"><%=flash[:notice] %></p>

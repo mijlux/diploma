@@ -31,10 +31,19 @@
       <%end %></p>
   </div>
 
-  <div class = "container-desc mt-lg ml-lg mb-lg">
-  <p class = "text-center title-sm"><%= @travel.description %></p>
-  </div>
+    <div class = "container-desc mt-lg ml-lg mb-lg">
+    <p class = "text-center title-sm"><%= @travel.description %></p>
+    </div>
 </div>
+
+  <div class = "container-desc mt-lg ml-lg mb-lg">
+    <p class="text-bold text-center title-sm mb-sm helvetica">5 вещей, которые нужно сделать в этом месте: </p>
+    <ul class="todo-list">
+      <% @travel.todo.split("\n").each do |item| %>
+        <li class="title-sm"><%= item  %></li>
+      <% end %>
+    </ul>
+  </div>
 
 
 <% if current_user.present? %>

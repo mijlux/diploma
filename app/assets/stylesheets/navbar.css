@@ -2,14 +2,17 @@
 /* Общие стили для навигационной панели */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: rgba(51, 51, 51, 0.8);
     color: #fff; /* Белый цвет текста */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень под навигацией */
 }
-
+.navbar-main{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(51, 51, 51, 0.8);
+}
 /* Стили для ссылок внутри навигационной панели */
 .navbar a {
     color: #fff;
@@ -19,13 +22,13 @@
 
 /* Активная ссылка */
 .navbar a:hover {
-    color: #ff6347; /* Оранжевый цвет активной ссылки */
+    color: lightgreen; /* Оранжевый цвет активной ссылки */
 }
 
 .navbar-title {
     display: flex;
-    justify-content: center;
-    background-color: rgba(51, 51, 51, 0.8);
+    justify-content: left;
+    padding: 20px;
 
 }
 .navbar-title a{
@@ -35,5 +38,5 @@
     font-size: 200%;
 }
 .navbar-title a:hover {
-    color: #ff6347; /* Оранжевый цвет активной ссылки */
+    color: lightgreen; /* Оранжевый цвет активной ссылки */
 }

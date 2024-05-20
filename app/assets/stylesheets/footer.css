@@ -17,11 +17,6 @@
     margin-left: 1rem; /* Отступ слева от ссылок */
 }
 
-/* Активная ссылка */
-.footer a.active {
-    color: #ff6347; /* Оранжевый цвет активной ссылки */
-}
-
 .footer-title {
     display: flex;
     justify-content: center;
@@ -33,4 +28,7 @@
     font-family: "Palatino Linotype", sans-serif;
     text-decoration: none;
     font-size: 200%;
+}
+.footer-title a:hover{
+    color: lightgreen;
 }

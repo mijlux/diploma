@@ -7,7 +7,7 @@ class TravelsController < ApplicationController
     @travel = Travel.new(travel_params)
 
     if @travel.save
-      redirect_to root_path, notice: 'Travel успешно создан.'
+      redirect_to travels_path, notice: 'Travel успешно создан.'
     end
   end
   def index
@@ -31,7 +31,7 @@ class TravelsController < ApplicationController
     @travel = Travel.find(params[:id])
 
     if @travel.update(travel_params)
-      redirect_to root_path, notice: 'Данные travel обновлены.'
+      redirect_to travel_path, notice: 'Данные travel обновлены.'
     end
   end
   def filter
@@ -47,7 +47,8 @@ class TravelsController < ApplicationController
     # Применение фильтров к модели Travel
     travels = Travel.all
     travels = apply_climate_filter(travels, climate_filter)
-    travels = apply_location_filter(travels, location_filter)
+    travels = apply_water_filter(travels, location_filter)
+    travels = apply_mount_filter(travels, location_filter)
     travels = apply_popularity_filter(travels, popularity_filter)
 
     # Выбор случайной записи из отфильтрованного списка
@@ -76,22 +77,36 @@ class TravelsController < ApplicationController
     travels
   end
 
-  def apply_location_filter(travels, location_filter)
-    # Пример применения фильтра расположения
-    if location_filter.include?("by_sea")
-      travels = travels.where(iswater: 1)
-    elsif location_filter.include?("by_mountain")
+  def apply_water_filter(travels, location_filter)
+    return travels if location_filter.nil?
+
+      if location_filter.include?("by_sea")
+        travels = travels.where(iswater: 1)
+      else
+        travels
+      end
+    travels
+    end
+
+  def apply_mount_filter(travels, location_filter)
+    return travels if location_filter.nil?
+
+    if location_filter.include?("by_mountain")
       travels = travels.where(ismount: 1)
+    else
+      travels
     end
     travels
   end
 
   def apply_popularity_filter(travels, popularity_filter)
     # Пример применения фильтра популярности
-    if popularity_filter.include?("popular")
+    if popularity_filter.include?("do_popular")
       travels = travels.where(ispopular: 1)
     elsif popularity_filter.include?("not_popular")
-      travels = travels.where(ispopular: 0)
+    travels = travels.where(ispopular: 0)
+    elsif popularity_filter.include?("not_important")
+      travels
     end
     travels
   end
@@ -99,7 +114,7 @@ class TravelsController < ApplicationController
 
   def travel_params
     params.require(:travel).permit(
-      :country, :city, :climate, :iswater, :ismount, :ispopular, :description, :city_image
+      :country, :city, :climate, :iswater, :ismount, :ispopular, :description, :todo, :city_image
     )
   end
 end

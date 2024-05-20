@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_12_123607) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_13_161605) do
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -238,6 +238,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_12_123607) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "ispopular"
+    t.text "todo"
   end
 
   create_table "user_travels", force: :cascade do |t|

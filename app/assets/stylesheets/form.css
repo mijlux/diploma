@@ -47,4 +47,11 @@
 .checkbox-input {
     margin-right: 5px;
 }
+.todo-list {
+    list-style-type: disc; /* Или другой тип маркера по вашему выбору */
+    padding-left: 20px; /* Отступ слева для маркеров */
+}
 
+.todo-list li {
+    margin-bottom: 10px; /* Отступ между пунктами списка */
+}
